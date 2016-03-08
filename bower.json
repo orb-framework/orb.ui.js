@@ -21,7 +21,13 @@
     "underscore.string": "",
     "marionette": "",
     "bootstrap": "",
-    "font-awesome": ""
+    "font-awesome": "",
+    "datatables": "1.10.7",
+    "datatables-responsive": "",
+    "datatables-scroller": "1.2.1",
+    "datatables-tabletools": "2.2.2",
+    "datatables-colresize": "0.0.10",
+    "datatables-plugins": ""
   },
   "devDependencies": {
   },

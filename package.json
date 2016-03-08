@@ -1,17 +1,24 @@
 {
-  "name": "orb.js",
-  "description": "JavaScript layer for the ORB database framework",
+  "name": "orb.ui.js",
+  "description": "UI Components for ORB based REST applications",
   "main": "src/all.js",
   "directories": {
     "test": "tests"
   },
   "scripts": {
-    "watch": "watchify src/all.js -o dist/orb.js -dv",
-    "build": "browserify src/all.js | uglifyjs -mc > dist/orb.min.js"
+    "watch-sass": "sass --watch src/sass/all.scss:dist/css/orb.ui.css",
+    "watch-js": "watchify src/js/all.js -o dist/js/orb.ui.js -dv",
+    "watch": "npm run watch-sass & npm run watch-js",
+    "build-sass": "sass src/sass/all.scss:dist/css/orb.ui.css",
+    "build-js": "browserify src/js/all.js > dist/js/orb.ui.js",
+    "build": "npm run build-sass & npm run build-js",
+    "bdist-sass": "sass src/sass/all.scss:dist/css/orb.ui.min.css --style compressed",
+    "bdist-js": "browserify src/js/all.js | uglifyjs -mc > dist/js/orb.ui.min.js",
+    "bdist": "npm run bdist-sass & npm run bdist-js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/projexsoftware/orb.js"
+    "url": "https://github.com/orb-framework/orb.ui.js"
   },
   "author": [
     "Eric Hulser"

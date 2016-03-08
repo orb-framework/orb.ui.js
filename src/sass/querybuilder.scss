@@ -1,0 +1,94 @@
+.orb {
+  .querybuilder {
+    .querybuilder {
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      background: rgba(0, 0, 0, 0.02);
+    }
+
+    .help {
+      width: 100%;
+      text-align: center;
+    }
+
+    > .query-items {
+      > .query-item {
+        margin: 5px;
+        width: 100%;
+
+        .editor-area {
+          margin-left: 5px;
+          margin-right: 5px;
+          display: inline-block;
+        }
+
+        .form-group {
+          width: 100%;
+          position: relative;
+
+          .selector {
+            position:absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            z-index: 100;
+            border-radius: 4px;
+            display: none;
+
+            &.selected {
+              background: rgba(0, 255, 0, 0.15);
+              border: 1px dashed green;
+            }
+
+            &:hover {
+              background: rgba(0, 0, 255, 0.15);
+              border: 1px dashed blue;
+            }
+          }
+        }
+
+        .switch-btn-group {
+          width: 120px;
+
+          .action-btn {
+            width: 50%;
+          }
+        }
+
+        &:not(:first-child) {
+          > .form-group {
+            > .switch-btn-group {
+              .action-btn[data-action="switch"] {
+                &:not(.selected) {
+                  display: none;
+                }
+                &.selected {
+                  width: 100%;
+                  border-radius: 4px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.meta-pressed,
+  &.ctrl-pressed {
+    .querybuilder {
+      > .query-items {
+        > .query-item {
+          .form-group {
+            .selector {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+  }
+}
