@@ -1,10 +1,19 @@
 {
   "name": "orb.ui.js",
   "description": "UI Components for ORB based REST applications",
+  "homepage": "https://github.com/orb-framework/orb.ui.js",
+  "version": "0.0.0",
   "main": "src/all.js",
-  "directories": {
-    "test": "tests"
+  "license": "LGPL",
+  "author": {
+    "name": "Eric Hulser",
+    "email": "eric.hulser@projexsoftware.com"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/orb-framework/orb.ui.js"
+  },
+  "github": "https://github.com/orb-framework/orb.ui.js",
   "scripts": {
     "watch-sass": "sass --watch src/sass/all.scss:dist/css/orb.ui.css",
     "watch-js": "watchify src/js/all.js -o dist/js/orb.ui.js -dv",
@@ -14,21 +23,22 @@
     "build": "npm run build-sass & npm run build-js",
     "bdist-sass": "sass src/sass/all.scss:dist/css/orb.ui.min.css --style compressed",
     "bdist-js": "browserify src/js/all.js | uglifyjs -mc > dist/js/orb.ui.min.js",
-    "bdist": "npm run bdist-sass & npm run bdist-js"
+    "bdist": "npm run bdist-sass & npm run bdist-js",
+    "deploy": "npm run bdist && npm run build && npm run version:patch && npm run push:git && npm publish",
+    "version:patch": "mversion patch -m \"Release v%s\"",
+    "push:git": "git push --tags origin HEAD:master"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/orb-framework/orb.ui.js"
-  },
-  "author": [
-    "Eric Hulser"
-  ],
   "devDependencies": {
     "browserify": "",
-    "uglify-js": "",
-    "watchify": "",
     "grunt": "",
     "grunt-cli": "",
-    "grunt-bowercopy": ""
+    "grunt-bowercopy": "",
+    "mversion": "1.10.1",
+    "node-sass": "",
+    "uglify-js": "",
+    "watchify": ""
+  },
+  "directories": {
+    "test": "tests"
   }
 }
