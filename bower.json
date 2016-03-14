@@ -1,11 +1,8 @@
 {
   "name": "orb.ui.js",
-  "version": "0.0.0",
-  "homepage": "https://github.com/orb-framework/orb.ui.js",
-  "authors": [
-    "Eric Hulser"
-  ],
   "description": "UI Components for ORB based REST applications",
+  "homepage": "https://github.com/orb-framework/orb.ui.js",
+  "version": "0.0.0",
   "main": "dist/orb.ui.js",
   "keywords": [
     "backbone",
@@ -13,6 +10,26 @@
     "computed",
     "field",
     "model"
+  ],
+  "license": "LGPL",
+  "author": {
+    "name": "Eric Hulser",
+    "email": "eric.hulser@projexsoftware.com"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "public",
+    "specs",
+    ".gitignore",
+    ".jshintrc",
+    ".travis.yml",
+    "Gruntfile.js",
+    "component.json",
+    "package.json"
   ],
   "dependencies": {
     "jQuery": "",
@@ -28,23 +45,5 @@
     "datatables-tabletools": "2.2.2",
     "datatables-colresize": "0.0.10",
     "datatables-plugins": ""
-  },
-  "devDependencies": {
-  },
-  "license": "LGPL",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests",
-    "public",
-    "specs",
-    ".gitignore",
-    ".jshintrc",
-    ".travis.yml",
-    "Gruntfile.js",
-    "component.json",
-    "package.json"
-  ]
+  }
 }
