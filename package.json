@@ -2,7 +2,7 @@
   "name": "orb.ui.js",
   "description": "UI Components for ORB based REST applications",
   "homepage": "https://github.com/orb-framework/orb.ui.js",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "main": "src/all.js",
   "license": "LGPL",
   "author": {
