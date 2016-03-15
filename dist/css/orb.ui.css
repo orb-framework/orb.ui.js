@@ -1,0 +1,67 @@
+.orb .querybuilder .querybuilder {
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.02); }
+
+.orb .querybuilder .help {
+  width: 100%;
+  text-align: center; }
+
+.orb .querybuilder > .query-items > .query-item {
+  margin: 5px;
+  width: 100%; }
+  .orb .querybuilder > .query-items > .query-item .editor-area {
+    margin-left: 5px;
+    margin-right: 5px;
+    display: inline-block; }
+  .orb .querybuilder > .query-items > .query-item .form-group {
+    width: 100%;
+    position: relative; }
+    .orb .querybuilder > .query-items > .query-item .form-group .selector {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      z-index: 100;
+      border-radius: 4px;
+      display: none; }
+      .orb .querybuilder > .query-items > .query-item .form-group .selector.selected {
+        background: rgba(0, 255, 0, 0.15);
+        border: 1px dashed green; }
+      .orb .querybuilder > .query-items > .query-item .form-group .selector:hover {
+        background: rgba(0, 0, 255, 0.15);
+        border: 1px dashed blue; }
+  .orb .querybuilder > .query-items > .query-item .switch-btn-group {
+    width: 120px; }
+    .orb .querybuilder > .query-items > .query-item .switch-btn-group .action-btn {
+      width: 50%; }
+  .orb .querybuilder > .query-items > .query-item:not(:first-child) > .form-group > .switch-btn-group .action-btn[data-action="switch"]:not(.selected) {
+    display: none; }
+  .orb .querybuilder > .query-items > .query-item:not(:first-child) > .form-group > .switch-btn-group .action-btn[data-action="switch"].selected {
+    width: 100%;
+    border-radius: 4px; }
+
+.orb.meta-pressed .querybuilder > .query-items > .query-item .form-group .selector, .orb.ctrl-pressed .querybuilder > .query-items > .query-item .form-group .selector {
+  display: block; }
+
+.orb .orb-table {
+  display: flex;
+  flex-direction: column;
+  align-self: stretch; }
+  .orb .orb-table table {
+    cellspacing: 0; }
+    .orb .orb-table table th {
+      font-size: 1em; }
+    .orb .orb-table table tr {
+      font-size: 0.8em; }
+  .orb .orb-table .dataTables_scroll {
+    padding: 0;
+    border: 1px solid #ccc; }
+  .orb .orb-table .dataTables_wrapper .row:nth-child(2) .col-sm-12 {
+    padding: 0;
+    overflow-x: auto;
+    border: 1px solid #ccc;
+    border-radius: 4px; }
