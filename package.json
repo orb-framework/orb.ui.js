@@ -1,34 +1,44 @@
 {
   "name": "orb.ui.js",
   "description": "UI Components for ORB based REST applications",
+  "homepage": "https://github.com/orb-framework/orb.ui.js",
+  "version": "0.0.1",
   "main": "src/all.js",
-  "directories": {
-    "test": "tests"
-  },
-  "scripts": {
-    "watch-sass": "sass --watch src/sass/all.scss:dist/css/orb.ui.css",
-    "watch-js": "watchify src/js/all.js -o dist/js/orb.ui.js -dv",
-    "watch": "npm run watch-sass & npm run watch-js",
-    "build-sass": "sass src/sass/all.scss:dist/css/orb.ui.css",
-    "build-js": "browserify src/js/all.js > dist/js/orb.ui.js",
-    "build": "npm run build-sass & npm run build-js",
-    "bdist-sass": "sass src/sass/all.scss:dist/css/orb.ui.min.css --style compressed",
-    "bdist-js": "browserify src/js/all.js | uglifyjs -mc > dist/js/orb.ui.min.js",
-    "bdist": "npm run bdist-sass & npm run bdist-js"
+  "license": "LGPL",
+  "author": {
+    "name": "Eric Hulser",
+    "email": "eric.hulser@projexsoftware.com"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/orb-framework/orb.ui.js"
   },
-  "author": [
-    "Eric Hulser"
-  ],
+  "github": "https://github.com/orb-framework/orb.ui.js",
+  "scripts": {
+    "watch-sass": "npm run build-sass & node-sass -wr src/sass/all.scss dist/css/orb.ui.css",
+    "watch-js": "watchify src/js/all.js -o dist/js/orb.ui.js -dv",
+    "watch": "npm run watch-sass & npm run watch-js",
+    "build-sass": "node-sass src/sass/all.scss dist/css/orb.ui.css",
+    "build-js": "browserify src/js/all.js > dist/js/orb.ui.js",
+    "build": "npm run build-sass & npm run build-js",
+    "bdist-sass": "node-sass --output-style compressed src/sass/all.scss dist/css/orb.ui.min.css",
+    "bdist-js": "browserify src/js/all.js | uglifyjs -mc > dist/js/orb.ui.min.js",
+    "bdist": "npm run bdist-sass & npm run bdist-js",
+    "deploy": "npm run bdist && npm run build && npm run version:patch && npm run push:git && npm publish",
+    "version:patch": "mversion patch -m \"Release v%s\"",
+    "push:git": "git push --tags origin HEAD:master"
+  },
   "devDependencies": {
     "browserify": "",
-    "uglify-js": "",
-    "watchify": "",
     "grunt": "",
     "grunt-cli": "",
-    "grunt-bowercopy": ""
+    "grunt-bowercopy": "",
+    "mversion": "1.10.1",
+    "node-sass": "",
+    "uglify-js": "",
+    "watchify": ""
+  },
+  "directories": {
+    "test": "tests"
   }
 }
