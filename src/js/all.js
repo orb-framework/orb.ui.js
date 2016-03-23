@@ -1,16 +1,26 @@
 // define the namespaces
 window.orb = window.orb || {};
-window.orb.ui = window.orb.ui = new Backbone.Model({
+window.orb.ui = new Backbone.Model({
     shiftKey: false,
     metaKey: false,
     altKey: false,
-    ctrlKey: false
+    ctrlKey: false,
 });
+
+window.orb.ui.inputType = function (column_type) {
+    switch (column_type) {
+        //case 'Boolean':
+        //    return Wood.Checkbox;
+        default:
+            return Wood.Input;
+    }
+};
 
 // include the UI components
 require('./querybuilder/all');
 require('./editor/all');
 require('./modelpicker');
+require('./modeldialog');
 require('./table');
 
 // create global registry
